@@ -10,7 +10,6 @@ import './List.css';
 
 const FilmList = () => {
   const dispatch = useDispatch();
-
   const moviesObject = useSelector(populateFilms);
 
   // Starts fetching movies fom page 1
@@ -19,9 +18,10 @@ const FilmList = () => {
   const handleChange = (e, value) => {
     setPage(value);
   };
-  // useSelector returns an object, in my opinion it'll be easier to transform it to an array to display data
-  const moviesList = moviesObject.payload.films.list;
-  const totalPages = moviesObject.payload.films.total; //492 pages in the api
+
+  // Storing the data returned by useSelector in two variables
+  const moviesList = moviesObject.payload.films.list; // iteration at l36 to display dynamically each element
+  const totalPages = moviesObject.payload.films.total; // 493 pages in the api
 
   // Renders on first page load but need to add dispatch and the page number in the array to avoid unwanted side effects
   useEffect(() => {
