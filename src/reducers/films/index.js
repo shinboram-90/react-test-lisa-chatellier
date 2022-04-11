@@ -12,6 +12,7 @@ export const fetchMovies = (page) => (dispatch) => {
   });
 };
 
+// Extra for searching a movie by title but with all the movies, the collected data is not the same as the popular movies list
 export const searchMovies = (title) => (dispatch) => {
   searchMovieByTitle(title).then((data) => {
     dispatch(searchFilms(data));

@@ -28,7 +28,7 @@ const Search = () => {
   };
 
   return (
-    <>
+    <section>
       <Box
         sx={{
           display: 'flex',
@@ -59,7 +59,7 @@ const Search = () => {
       ) : (
         ''
       )}
-    </>
+    </section>
   );
 };
 

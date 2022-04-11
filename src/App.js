@@ -14,12 +14,11 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="films" element={<Films />}>
           <Route path="list" element={<FilmsList />} />
+          <Route path=":filmId" element={<FilmDetail />} />
         </Route>
-        <Route path="films/:filmId" element={<FilmDetail />} />
       </Routes>
     </div>
   );
 };
 
-// I would normally nest the :filmId in the films parent route but following the given architecture the expected rendering was not possible.
 export default App;
